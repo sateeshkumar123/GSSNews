@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="News.App">
+    <Application.Resources>
+
+         <ResourceDictionary>
+
+            <OnPlatform x:Key="EntryHeight" x:TypeArguments="x:Double" Android="-1" iOS="45" />
+            <OnPlatform x:Key="TopMargin" x:TypeArguments="Thickness" Android="0, 0, 0, 0" iOS="0, 30, 0, 0" />
+             <OnPlatform x:Key="MediumButtonWidth" x:TypeArguments="x:Double" Android="-1" iOS="100" />
+
+            <Color x:Key="PlaceholderTextColor">#B7B7B7</Color>
+            <Color x:Key="SaveButton">#ff0303</Color>
+            <Color x:Key="LoginBG">#434c5c</Color>
+            <Color x:Key="CardHeaderTextColor">#ffffff</Color>
+             <Color x:Key="lightGray">#D3D3D3</Color>
+            
+
+
+            <Style x:Key="EditableEntryStyle" TargetType="Entry">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="#000000" />
+                <Setter Property="BackgroundColor" Value="{StaticResource CardHeaderTextColor}" />
+                <Setter Property="HeightRequest" Value="{StaticResource EntryHeight}" />
+            </Style>
+
+        </ResourceDictionary>
+
+
+    </Application.Resources>
+</Application>

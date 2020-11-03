@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:local="clr-namespace:News"
+            xmlns:cardview="clr-namespace:CardView;assembly=CardView"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            x:Class="News.NewsPage"
+            BackgroundColor="White">
+    <!--Pages can be added as references or inline-->
+    <ContentPage IconImageSource="edit" Title="Register">
+
+        <Frame Padding="20" Margin="10"  BackgroundColor="White" HasShadow="True"  VerticalOptions="CenterAndExpand">
+
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout Margin="0,5" Orientation="Vertical">
+
+                    <Label Text="Name" FontSize="Small" FontAttributes="Bold"/>
+
+                    <local:CustomEntry  x:Name="txtName"
+                                    CornerRadius="5"
+                                    PlaceholderColor="{StaticResource PlaceholderTextColor}"
+                                        IsCurvedCornersEnabled="True"  
+                                        BorderColor="{StaticResource lightGray}"   
+                                        HeightRequest="40"  
+                                        TextColor="Black" /> 
+
+              </StackLayout>
+
+                <StackLayout  Margin="0,5" Orientation="Vertical">
+
+                   <Label Text="Designation" FontSize="Small" FontAttributes="Bold"/>
+
+                    <local:CustomEntry  x:Name="txtDeg"
+                        CornerRadius="5"
+                        PlaceholderColor="{StaticResource PlaceholderTextColor}"
+                            IsCurvedCornersEnabled="True"  
+                            BorderColor="{StaticResource lightGray}"   
+                            HeightRequest="40"  
+                            TextColor="Black" /> 
+
+             </StackLayout>
+
+                <StackLayout  Margin="0,5" Orientation="Vertical">
+
+                   <Label Text="Email" FontSize="Small" FontAttributes="Bold"/>
+
+                    <local:CustomEntry  x:Name="txtEmail"
+                        CornerRadius="5"
+                        PlaceholderColor="{StaticResource PlaceholderTextColor}"
+                            IsCurvedCornersEnabled="True"  
+                            BorderColor="{StaticResource lightGray}"   
+                            HeightRequest="40"  
+                            TextColor="Black" /> 
+
+                </StackLayout>
+
+                <StackLayout  Margin="0,5" Orientation="Vertical">
+
+                   <Label Text="Mobile" FontSize="Small" FontAttributes="Bold"/>
+
+                    <local:CustomEntry  x:Name="txtMobile"
+                        CornerRadius="5"
+                        PlaceholderColor="{StaticResource PlaceholderTextColor}"
+                            IsCurvedCornersEnabled="True"  
+                            BorderColor="{StaticResource lightGray}"   
+                            HeightRequest="40"  
+                            TextColor="Black" /> 
+
+                </StackLayout>
+
+                 <Frame HasShadow="False" Padding="0"  Margin="0,20" BorderColor="{StaticResource lightGray}" >
+
+                   <StackLayout Padding="0" HeightRequest="40" VerticalOptions="FillAndExpand" Orientation="Horizontal">
+
+                        <Label Text="Choose File" Margin="10,0" TextColor="DarkGray" HorizontalOptions="StartAndExpand" VerticalOptions="CenterAndExpand" FontSize="Small" FontAttributes="Bold"/>
+
+                       
+                        <Button x:Name="uploadImg" Text="Upload" HeightRequest="40" Padding="10" HorizontalOptions="EndAndExpand" WidthRequest="{StaticResource MediumButtonWidth}" BackgroundColor="LightGray" TextColor="White" VerticalOptions="CenterAndExpand"/>
+
+
+                   </StackLayout>
+
+                 </Frame>
+
+                <StackLayout Margin="0,20" Orientation="Horizontal">
+
+                    <Button Text="Cancle" HeightRequest="40" Padding="10"  WidthRequest="{StaticResource MediumButtonWidth}" BackgroundColor="Gray" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="StartAndExpand"/>
+
+                     <Button Text="Save" HeightRequest="40" Padding="10"  WidthRequest="{StaticResource MediumButtonWidth}" BackgroundColor="DeepSkyBlue" TextColor="White" VerticalOptions="CenterAndExpand" HorizontalOptions="EndAndExpand"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
+
+        </Frame>
+
+    </ContentPage>
+
+    <ContentPage IconImageSource="newspaper" Title="News">
+
+       <ListView x:Name="newsListView"  
+             HasUnevenRows="True"  >  
+           <ListView.ItemTemplate>  
+               <DataTemplate>  
+                   <ViewCell>  
+                      <Frame Margin="10" HasShadow="True">
+
+                          <StackLayout Orientation="Horizontal">
+
+                               <StackLayout  Orientation="Vertical">
+
+                                    <Label Text="{Binding title}" FontAttributes="Bold" FontSize="Small" />
+
+                                   <!-- <Label Text="{Binding description}" MaxLines="2" FontSize="12"/>  -->
+
+                                </StackLayout>
+
+                                <StackLayout >
+
+                                        <Image  WidthRequest="100" HeightRequest="100" Aspect="AspectFill" Source="{Binding urlToImage}"/>
+
+                                </StackLayout>
+
+                          </StackLayout>
+
+                      </Frame>
+                   </ViewCell>  
+               </DataTemplate>  
+           </ListView.ItemTemplate>  
+       </ListView>  
+
+    </ContentPage>
+
+</TabbedPage>

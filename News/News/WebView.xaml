@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="News.WebView"
+    BackgroundColor="#1B416E"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <StackLayout x:Name="mainStack"
+                         HorizontalOptions="FillAndExpand"
+                         VerticalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                         AbsoluteLayout.LayoutFlags="All"
+                         Margin="{StaticResource TopMargin}"
+                         Orientation="Vertical">
+
+                <Grid
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                    BackgroundColor="LightGray"
+                      ColumnSpacing="0"
+                      RowSpacing="0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ContentView
+                             Grid.Row="0"
+                             HorizontalOptions="FillAndExpand"
+                             BackgroundColor="#1B416E"
+                             VerticalOptions="Start"
+                             HeightRequest="50">
+
+                        <AbsoluteLayout>
+
+                            <Image x:Name="menuLogo"
+                               AbsoluteLayout.LayoutBounds="1,1,1,1"
+                               AbsoluteLayout.LayoutFlags="All"
+                               HeightRequest="25"
+                               WidthRequest="25"
+                               Aspect="AspectFill"
+                                   Source="left"
+                               Margin="20,0"
+                               HorizontalOptions="Start"
+                               VerticalOptions="CenterAndExpand"/>
+
+                            
+                        </AbsoluteLayout>
+                    </ContentView>
+
+                    <StackLayout  Grid.Row="1"
+                                  Orientation="Vertical"
+                                  Spacing="0"
+                                  HorizontalOptions="FillAndExpand"
+                                  VerticalOptions="FillAndExpand">
+
+                        <WebView x:Name="loadURL" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+
+
+                    </StackLayout>
+
+                </Grid>
+
+            </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

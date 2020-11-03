@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="News.NewsView">
+
+    <ContentView.Content>
+
+        <Frame HasShadow="True" Margin="10" Padding="5" HeightRequest="100">
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.7*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0" Orientation="Vertical">
+
+                     <Label Text="{Binding title}" FontAttributes="Bold" FontSize="Small" />
+
+                     <Label Text="{Binding description}" MaxLines="2" FontSize="12"/>  
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+
+                      <Image HorizontalOptions="FillAndExpand" HeightRequest="100" Aspect="AspectFill" VerticalOptions="FillAndExpand" Source="{Binding urlToImage}"/>
+
+                </StackLayout>
+
+            </Grid>
+
+        </Frame>
+
+    </ContentView.Content>
+
+</ContentView>
